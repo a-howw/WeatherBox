@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title>天氣盒</title>
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Noto+Sans+TC:100,400|Open+Sans:400,600'><link rel="stylesheet" href="./style.css">
+
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<div class="daybox">
+  <label>
+    <input id="switch_night" type="checkbox"/>
+    <div class="top">
+      <div class="cloud"></div>
+      <div class="text_area">
+        <div class="temperature">24°C</div>
+        <div class="infos">
+          <div class="address">台北市中山區</div>
+          <div class="time">星期三 下午4:00</div>
+        </div>
+      </div>
+      <div class="middle">
+        <div class="moonrotate">
+          <div class="moon"></div>
+        </div>
+        <div class="stars">
+          <div class="star"></div>
+          <div class="star star2"></div>
+          <div class="star star3"></div>
+          <div class="star star4"></div>
+          <div class="star star5"></div>
+          <div class="star star6"></div>
+          <div class="star star7"></div>
+          <div class="star star8"></div>
+          <div class="star star9"></div>
+          <div class="star star10"></div>
+        </div>
+        <div class="mouns">
+          <svg height="100%" width="100%">
+            <defs>
+              <linearGradient id="grad1" x1="0%" y1="0%" x2="0%" y2="90%">
+                <stop offset="0%" stop-color="#24936E"></stop>
+                <stop offset="5%" stop-color="#24936E"></stop>
+                <stop offset="45%" stop-color="#336774"></stop>
+                <stop offset="100%" stop-color="#0D5661"></stop>
+              </linearGradient>
+            </defs>
+            <polyline class="moun1" id="grad1" points="0,60 20,10 60,70 140,20 190,55 230,10 260,90 340,10 380,70 380,200 0,200"></polyline>
+            <defs>
+              <linearGradient id="grad2" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#24936E"></stop>
+                <stop offset="40%" stop-color="#268785"></stop>
+                <stop offset="100%" stop-color="#8F77B5"></stop>
+              </linearGradient>
+            </defs>
+            <polyline class="moun2" id="grad2" points="0,90 65,0 150,150 260,40 320,100 390,0 420,30 420,200 0,200"></polyline>
+          </svg>
+        </div>
+        <svg class="temsvg">
+          <circle cx="55" cy="50" r="3"></circle>
+          <text x="43.5" y="68">24°C</text>
+          <circle cx="115" cy="80" r="3"></circle>
+          <text x="104.5" y="98">21°C</text>
+          <circle cx="175" cy="100" r="3"></circle>
+          <text x="165" y="118">19°C</text>
+          <circle cx="235" cy="110" r="3"></circle>
+          <text x="225" y="128">18°C</text>
+          <circle cx="295" cy="80" r="3"></circle>
+          <text x="285" y="98">21°C</text>
+          <circle cx="355" cy="100" r="3"></circle>
+          <text x="345" y="118">19°C</text>
+          <polyline points="0,40 55,50 115,80 175,100 235,110 295,80 355,100 414,80"></polyline>
+        </svg>
+        <div class="otsinfos">
+          <p>降雨機率：21%</p>
+          <p>濕度：68%</p>
+          <p>風速：3 公里/時</p>
+        </div>
+      </div>
+    </div>
+    <div class="bottom">
+      <div class="dayweather">
+        <h3>MON</h3>
+        <svg viewbox="-50 -50 100 100">
+          <line class="rain" x1="-10" y1="15" x2="-10" y2="35"></line>
+          <line class="rain" x1="5" y1="5" x2="5" y2="25"></line>
+          <line class="rain" x1="15" y1="20" x2="15" y2="45"></line>
+          <circle class="cloud" cx="-2" cy="-15" r="20"></circle>
+          <circle class="cloud" cx="11" cy="-15" r="15"></circle>
+          <circle class="cloud" cx="14" cy="0" r="20"></circle>
+          <circle class="cloud" cx="-12" cy="0" r="20"></circle>
+          <circle class="cloud" cx="4" cy="0" r="20"></circle>
+        </svg>
+      </div>
+      <div class="dayweather">
+        <h3>TUE</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="cloud" cx="-2" cy="-15" r="20"></circle>
+          <circle class="cloud" cx="11" cy="-15" r="15"></circle>
+          <circle class="cloud" cx="14" cy="0" r="20"></circle>
+          <circle class="cloud" cx="-12" cy="0" r="20"></circle>
+          <circle class="cloud" cx="4" cy="0" r="20"></circle>
+        </svg>
+      </div>
+      <div class="dayweather">
+        <h3>WED</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="sun" cx="0" cy="0" r="20"></circle>
+        </svg>
+      </div>
+      <div class="dayweather">
+        <h3>THU</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="sun" cx="0" cy="0" r="20"></circle>
+        </svg>
+      </div>
+      <div class="dayweather">
+        <h3>FRI</h3>
+        <svg viewbox="-50 -50 100 100">
+          <line class="rain" x1="-10" y1="15" x2="-10" y2="35"></line>
+          <line class="rain" x1="5" y1="5" x2="5" y2="25"></line>
+          <line class="rain" x1="15" y1="20" x2="15" y2="45"></line>
+          <polyline class="lightning" points="-5,10 -15,30 0,30 -10,50"></polyline>
+          <polyline class="lightning lightning2" points="15,10 5,30 20,30 10,50"></polyline>
+          <circle class="cloud" cx="-2" cy="-15" r="20"></circle>
+          <circle class="cloud" cx="11" cy="-15" r="15"></circle>
+          <circle class="cloud" cx="14" cy="0" r="20"></circle>
+          <circle class="cloud" cx="-12" cy="0" r="20"></circle>
+          <circle class="cloud" cx="4" cy="0" r="20"></circle>
+        </svg>
+      </div>
+      <div class="dayweather">
+        <h3>SAT</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="sun" cx="0" cy="0" r="20"></circle>
+        </svg>
+      </div>
+      <div class="dayweather">
+        <h3>SUN</h3>
+        <svg viewbox="-50 -50 100 100">
+          <circle class="sun" cx="0" cy="0" r="20"></circle>
+        </svg>
+      </div>
+    </div>
+  </label>
+</div>
+<!-- partial -->
+  
+</body>
+</html>

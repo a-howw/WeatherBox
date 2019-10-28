@@ -1,0 +1,353 @@
+$color_white: #e6e6e6
+$color_grey: #333
+$color_black: #1a1a1a
+$color_yellow: #F9BF45
+$color_orange: #E98B2A
+$color_sky_light: #2E5C6E
+$color_sky_dark: #0F2540
+$color1_moun1: #24936E
+$color2_moun1: #336774
+$color3_moun1: #0D5661
+$color1_moun2: #24936E
+$color2_moun2: #268785
+$color3_moun2: #8F77B5
+
+@mixin size($w,$h)
+  width: $w
+  height: $h
+
+*
+  position: relative
+  font-family: 'Open Sans',serif,'Noto Sans TC'
+  color: $color_white
+
+html,body
+  +size(100%,100%)
+  padding: 0
+  margin: 0
+  background-color: $color_black
+  display: flex
+  justify-content: center
+  align-items: center
+
+label
+  cursor: pointer
+  
+.daybox
+  width: 414px
+  max-width: 414px
+  border-radius: 10px
+  box-shadow: 0px 0px 30px rgba($color_white,0.1)
+  &:hover
+    .bottom
+      height: 80px
+    .dayweather
+      opacity: 1
+  
+.top
+  height: 330px
+  border-radius: 10px
+  background: linear-gradient(90deg,$color_sky_light 0%,$color_sky_dark 95%)
+  background-size: 300% 100%
+  animation: daylight 20s linear both infinite
+  transition-duration: 0.5s
+  
+@keyframes daylight
+  0%
+    background-position: 0% 0%
+  50%
+    background-position: 100% 0%
+  100%
+    background-position: 0% 0%
+  
+.cloud
+  +size(80px,30px)
+  position: absolute
+  top: 48px
+  left: 25px
+  border-radius: 100px
+  background-color: $color_white
+  box-shadow: 0px 4px 3px rgba($color_black,0.3)
+  animation: float 4s infinite
+  &:before,&:after
+    content: ''
+    background-color: $color_white
+    +size(40px,40px)
+    display: block
+    border-radius: 100%
+    position: absolute
+  &:before
+    top: -20px
+    left: 10px
+  &:after
+    top: -25px
+    left: 30px
+    
+@keyframes float
+  0%
+    transform: translateY(0px)
+  50%
+    transform: translateY(5px)
+  100%
+    transform: translateY(0px)
+  
+.text_area
+  position: absolute
+  left: 33%
+  top: 10px
+  .temperature
+    display: inline-block
+    font-size: 62px
+    font-weight: 600
+  .infos
+    display: inline-block
+    left: 18px
+    bottom: 7px
+    font-size: 12px
+    font-weight: 400
+    letter-spacing: 1px
+
+.middle
+  width: 100%
+  height: 100%
+  overflow: hidden
+  .mouns
+    width: 100%
+    height: 160px
+    position: absolute
+    top: 170px
+    .moun1
+      fill: url(#grad1)
+    .moun2
+      fill: url(#grad2)
+  .stars
+    width: 120%
+    height: 120%
+    overflow: hidden
+    top: 110px
+    left: -20px
+    border-radius: 100%
+    animation: starrotate 20s infinite
+    .star
+      +size(3px,3px)
+      position: absolute
+      top: 70px
+      left: -70px
+      border-radius: 10px
+      background-color: $color_white
+      box-shadow: 0 0 10px rgba($color_white,0.8)
+    .star2
+      +size(4px,4px)
+      top: 70px
+      left: 70px
+    .star3
+      +size(6px,6px)
+      top: 100px
+      left: 100px
+      opacity: 0.7
+    .star4
+      top: 50px
+      left: 130px
+    .star5
+      +size(4px,4px)
+      top: 20px
+      left: 200px
+      opacity: 0.3
+    .star6
+      +size(6px,6px)
+      top: 40px
+      left: 250px
+    .star7
+      top: 20px
+      left: 270px
+    .star8
+      top: 60px
+      left: 310px
+      opacity: 0.7
+    .star9
+      top: 45px
+      left: 350px
+    .star10
+      +size(6px,6px)
+      top: 80px
+      left: 380px
+      opacity: 0.7
+  
+  .moonrotate
+    width: 470px
+    position: absolute
+    top: 330px
+    left: -30px
+    animation: moonrotate 20s infinite linear
+    .moon
+      +size(50px,50px)
+      position: absolute
+      border-radius: 100%
+      // box-shadow: 30px -30px
+      animation: moonmove 9.5s infinite linear
+
+@keyframes moonmove
+  0%
+    box-shadow: 40px -40px $color_yellow
+    transform: translateX(-40px) translateY(40px)
+  100%
+    box-shadow: -40px 40px $color_yellow
+    transform: translateX(40px) translateY(-40px)
+    
+@keyframes moonrotate
+  0%
+    transform: rotate(180deg)
+  100%
+    transform: rotate(0deg)
+
+@keyframes starrotate
+  0%
+    transform: rotate(360deg)
+  100%
+    transform: rotate(0deg)
+  
+.temsvg
+  position: absolute
+  top: 100px
+  width: 100%
+  font-size: 11px
+  polyline
+    stroke: $color_white
+    stroke-width: 1px
+    fill: none
+  text
+    opacity: 0
+    letter-spacing: 0.3px
+  circle, text
+    fill: $color_white
+  polyline,circle
+    opacity: 0.2
+    
+.otsinfos
+  position: absolute
+  top: 285px
+  left: 15%
+  opacity: 0
+  p
+    display: inline-block
+    margin: 0 5px
+    font-size: 12px
+    font-weight: 100
+    letter-spacing: 0.6px
+    color: $color_white
+  
+.bottom
+  height: 15px
+  display: flex
+  justify-content: center
+  border-radius: 0 0 10px 10px
+  background-color: $color_grey
+  box-shadow: 0px -5px 30px rgba($color_black,0.3)
+  transition-duration: 0.5s
+  .dayweather
+    display: inline-block
+    width: calc(100% / 7 - 5px)
+    overflow: hidden
+    text-align: center
+    opacity: 0
+    transition-duration: 0.5s
+    h3
+      margin: 14px 0 0
+      font-size: 10px
+      letter-spacing: 0.5px
+    svg
+      width: 100%
+      max-width: 40px
+      height: 40px
+      margin-top: 1px
+      .cloud
+        fill: $color_white
+      .sun
+        stroke-width: 23px
+        stroke: $color_orange
+        stroke-dasharray: 5.2px
+        fill: $color_orange
+        animation: sunmove 60s infinite linear
+      .rain
+        +size(2px,10px)
+        position: absolute
+        top: 10px
+        left: 10px
+        stroke: $color_white
+        stroke-width: 1px
+        animation: raindrop 5s infinite
+      .lightning
+        fill: $color_yellow
+        animation: lightning 5s infinite linear
+      .lightning2
+        animation-delay: -8s
+        
+@keyframes raindrop
+  0%
+    transform: translateY(0px)
+  100%
+    transform: translateY(50px)
+    opacity: 0
+  
+@keyframes lightning
+  0%
+    opacity: 1
+  4%
+    opacity: 0
+  5%
+    opacity: 1
+  10%
+    opacity: 1
+  30%
+    opacity: 0
+  49%
+    opacity: 0
+  50%
+    opacity: 1
+  100%
+    opacity: 0
+  
+@keyframes sunmove
+  0%
+    transform: rotate(0deg)
+  100%
+    transform: rotate(360deg)
+  
+.dayweather:nth-child(1)
+  transition-delay: 0.1s
+.dayweather:nth-child(2)
+  transition-delay: 0.2s
+.dayweather:nth-child(3)
+  transition-delay: 0.3s
+.dayweather:nth-child(4)
+  transition-delay: 0.4s
+.dayweather:nth-child(5)
+  transition-delay: 0.5s
+.dayweather:nth-child(6)
+  transition-delay: 0.6s
+.dayweather:nth-child(7)
+  transition-delay: 0.7s
+  
+#switch_night
+  display: none
+  
+#switch_night:checked+.top
+    .temsvg
+      circle,text,polyline
+        opacity: 1
+    .otsinfos
+      opacity: 1
+    .moon,.star
+      opacity: 0.2
+    .moun1
+      opacity: 0.7
+      
+.temsvg
+  circle,polyline
+    transition: 0.3s
+  text
+    transition: 0.5s 0.1s
+.otsinfos
+  transition: 0.5s
+.moon,.star,.moun1
+  transition: 0.6s

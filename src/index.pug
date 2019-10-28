@@ -1,0 +1,107 @@
+.daybox
+  label
+    input#switch_night(type="checkbox")
+    .top
+      .cloud
+      .text_area
+        .temperature 24°C
+        .infos
+          .address 台北市中山區
+          .time 星期三 下午4:00
+      .middle
+        .moonrotate
+          .moon
+        .stars
+          .star
+          .star.star2
+          .star.star3
+          .star.star4
+          .star.star5
+          .star.star6
+          .star.star7
+          .star.star8
+          .star.star9
+          .star.star10
+        .mouns
+          svg(height="100%" width="100%")
+            defs
+              linearGradient#grad1(x1="0%" y1="0%" x2="0%" y2="90%")
+                stop(offset="0%" stop-color="#24936E")
+                stop(offset="5%" stop-color="#24936E")
+                stop(offset="45%" stop-color="#336774")
+                stop(offset="100%" stop-color="#0D5661")
+            polyline.moun1#grad1(points="0,60 20,10 60,70 140,20 190,55 230,10 260,90 340,10 380,70 380,200 0,200")
+            defs
+              linearGradient#grad2(x1="0%" y1="0%" x2="0%" y2="100%")
+                stop(offset="0%" stop-color="#24936E")
+                stop(offset="40%" stop-color="#268785")
+                stop(offset="100%" stop-color="#8F77B5")
+            polyline.moun2#grad2(points="0,90 65,0 150,150 260,40 320,100 390,0 420,30 420,200 0,200")
+
+        svg.temsvg
+          circle(cx=55 cy=50 r=3)
+          text(x=43.5 y=68) 24°C
+          circle(cx=115 cy=80 r=3)
+          text(x=104.5 y=98) 21°C
+          circle(cx=175 cy=100 r=3)
+          text(x=165 y=118) 19°C
+          circle(cx=235 cy=110 r=3)
+          text(x=225 y=128) 18°C
+          circle(cx=295 cy=80 r=3)
+          text(x=285 y=98) 21°C
+          circle(cx=355 cy=100 r=3)
+          text(x=345 y=118) 19°C
+          polyline(points='0,40 55,50 115,80 175,100 235,110 295,80 355,100 414,80')
+        .otsinfos
+          p 降雨機率：21%
+          p 濕度：68%
+          p 風速：3 公里/時
+    .bottom
+      .dayweather
+        h3 MON
+        svg(viewbox="-50 -50 100 100")
+          line.rain(x1=-10 y1=15 x2=-10 y2=35)
+          line.rain(x1=5 y1=5 x2=5 y2=25)
+          line.rain(x1=15 y1=20 x2=15 y2=45)
+          circle.cloud(cx=-2 cy=-15 r=20)
+          circle.cloud(cx=11 cy=-15 r=15)
+          circle.cloud(cx=14 cy=0 r=20)
+          circle.cloud(cx=-12 cy=0 r=20)
+          circle.cloud(cx=4 cy=0 r=20)
+      .dayweather
+        h3 TUE
+        svg(viewbox="-50 -50 100 100")
+          circle.cloud(cx=-2 cy=-15 r=20)
+          circle.cloud(cx=11 cy=-15 r=15)
+          circle.cloud(cx=14 cy=0 r=20)
+          circle.cloud(cx=-12 cy=0 r=20)
+          circle.cloud(cx=4 cy=0 r=20)
+      .dayweather
+        h3 WED
+        svg(viewbox="-50 -50 100 100")
+          circle.sun(cx=0 cy=0 r=20)
+      .dayweather
+        h3 THU
+        svg(viewbox="-50 -50 100 100")
+          circle.sun(cx=0 cy=0 r=20)
+      .dayweather
+        h3 FRI
+        svg(viewbox="-50 -50 100 100")
+          line.rain(x1=-10 y1=15 x2=-10 y2=35)
+          line.rain(x1=5 y1=5 x2=5 y2=25)
+          line.rain(x1=15 y1=20 x2=15 y2=45)
+          polyline.lightning(points="-5,10 -15,30 0,30 -10,50")
+          polyline.lightning.lightning2(points="15,10 5,30 20,30 10,50")
+          circle.cloud(cx=-2 cy=-15 r=20)
+          circle.cloud(cx=11 cy=-15 r=15)
+          circle.cloud(cx=14 cy=0 r=20)
+          circle.cloud(cx=-12 cy=0 r=20)
+          circle.cloud(cx=4 cy=0 r=20)
+      .dayweather
+        h3 SAT
+        svg(viewbox="-50 -50 100 100")
+          circle.sun(cx=0 cy=0 r=20)
+      .dayweather
+        h3 SUN
+        svg(viewbox="-50 -50 100 100")
+          circle.sun(cx=0 cy=0 r=20)
